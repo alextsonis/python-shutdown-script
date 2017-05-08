@@ -73,7 +73,7 @@ try:
 except KeyboardInterrupt:
     print "Keyboard Interupt -- Canceling"
     if (machine=='Windows'):
-        os.system('shutdown /a -c "Planned shutdown cancelled"')
+        os.system('shutdown /a')
     elif (machine=='Linux'):
         os.system('shutdown -c "Planned shutdown cancelled"')
     exit()
