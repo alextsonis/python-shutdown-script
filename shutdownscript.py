@@ -1,7 +1,40 @@
-import datetime
-import os
-import time
-import platform
+# -*- coding: cp1253 -*-
+#Shutdown script for python with a time choice
+#Distributed under the MIT License Copyright © 2017 Alexandros Tsonis
+
+#Try to import modules and check if they are present at the system
+try:
+    import datetime
+except ImportError:
+    print "You require the \"datetime\" library to run this script."
+    print "Open a cmd prompt or terminal and type \"pip install datetime\" without the quotes."
+    print "(assuming you added python.exe to your path variable)"
+    em=raw_input("Press the Enter key to exit...")
+    exit()
+try:
+    import ewos
+except ImportError:
+    print "You require the \"os\" library to run this script."
+    print "Open a cmd prompt or terminal and type \"pip install os\" without the quotes."
+    print "(assuming you added python.exe to your path variable)"
+    em=raw_input("Press the Enter key to exit...")
+    exit()
+try:
+    import time
+except ImportError:
+    print "You require the \"time\" library to run this script."
+    print "Open a cmd prompt or terminal and type \"pip install time\" without the quotes."
+    print "(assuming you added python.exe to your path variable)"
+    em=raw_input("Press the Enter key to exit...")
+    exit()
+try:
+    import platform
+except ImportError:
+    print "You require the \"platform\" library to run this script."
+    print "Open a cmd prompt or terminal and type \"pip install platform\" without the quotes."
+    print "(assuming you added python.exe to your path variable)"
+    em=raw_input("Press the Enter key to exit...")
+    exit()
 
 
 #          _      _      _
@@ -55,10 +88,10 @@ except KeyboardInterrupt:
 #Execute shutdown command and warn for last time
 try:   
     if (machine=='Windows'):
-        os.system('shutdown /s /t 60 -c "Planned shutdown of system in one minute"')
-    elif (machine=='Linux'):
-        os.system('shutdown +1 "Planned shutdown of system in one minute"')
-    print "Shutdown sequence is initiated - 45 seconds left to cancel."
+        os.system('shutdown /s /t 60 -c "Planned shutdown of system in one minute"')# Duck says:      _   
+    elif (machine=='Linux'):                                                        # Turn off this >(.)__ 
+        os.system('shutdown +1 "Planned shutdown of system in one minute"')         # system! Quack! (   / 
+    print "Shutdown sequence is initiated - 45 seconds left to cancel."             # Erm, quick!  ~~~~~~~~~
     print "Do not close this window if you want to cancel - Just press Ctrl+C."
     if (machine=='Windows'):
         print "If you close this window, open a cmd prompt (win+x)\nand type \"shutdown /a\""
