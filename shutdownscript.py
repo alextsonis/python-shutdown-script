@@ -12,7 +12,7 @@ except ImportError:
     em=raw_input("Press the Enter key to exit...")
     exit()
 try:
-    import ewos
+    import os
 except ImportError:
     print "You require the \"os\" library to run this script."
     print "Open a cmd prompt or terminal and type \"pip install os\" without the quotes."
